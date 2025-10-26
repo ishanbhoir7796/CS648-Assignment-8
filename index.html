@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Assignment 08</title>
+    <link rel="preconnect" href>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .inputFields {
+            border: 1px solid rgb(92, 168, 222);
+            padding: 3px;
+        }
+        
+        .labelFontSize {
+            font-size: 15px;
+        }
+        
+        #addButton {
+            float: right;
+            padding: 5px 30px;
+            margin-top: 10px;
+            color: #fff;
+            background: rgb(92, 168, 222);
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+        
+        #employeeCount {
+            font-size: 13px;
+            font-weight: bold;
+        }
+        
+        .errorMsg {
+            color: #f00;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        
+        #employeeTable {
+            width: 500px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        
+        #employeeTable th {
+            border: 2px solid #fff;
+            color: #fff;
+            background: rgb(92, 168, 222);
+            padding: 5px;
+        }
+        
+        #employeeTable td {
+            border: 1px solid #fff;
+            padding: 5px;
+            font-weight: bold;
+        }
+        
+        #employeeTable tbody tr:nth-child(2n) {
+            background: rgb(198, 230, 254);
+        }
+        
+        #employeeTable tbody tr:nth-child(2n+1) {
+            background: rgb(234, 240, 244);
+        }
+        
+        .btn {
+            padding: 5px 30px;
+            border: 1px solid #000;
+            background: rgb(92, 168, 222);
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+    <script defer src="js/employee-management.js"></script>
+</head>
+
+<body>
+    <h3>The Employee Management Application</h3>
+
+    <div id="addEmployeeTitle"><b>Add Employee</b></div>
+    <br><br>
+
+    <form id="employeeForm">
+        <table>
+            <tr>
+                <td class="labelFontSize"><label for="employeeName">Name:</label></td>
+                <td>&nbsp;<input type="text" id="employeeName" class="inputFields" /></td>
+                <td>&nbsp;<span id="nameError" class="errorMsg"></span></td>
+            </tr>
+            <tr>
+                <td class="labelFontSize"><label for="title">Title:</label></td>
+                <td>&nbsp;<input type="text" id="title" class="inputFields" /></td>
+                <td>&nbsp;<span id="titleError" class="errorMsg"></span></td>
+            </tr>
+            <tr>
+                <td class="labelFontSize"><label for="extension">Extension:</label></td>
+                <td>&nbsp;<input type="text" id="extension" class="inputFields" /></td>
+                <td>&nbsp;<span id="extensionError" class="errorMsg"></span></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>&nbsp;<button id="addButton" type="button">Add</button></td>
+            </tr>
+        </table>
+    </form>
+
+    <br>
+    <div id="employeeCount"></div>
+    <br>
+
+    <div id="employeeTableHolder">
+        <table id="employeeTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Title</th>
+                    <th>Extension</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="employeeBody"></tbody>
+        </table>
+    </div>
+</body>
+
+</html>
